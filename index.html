@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realidad Virtual - AFORE PENSIONISSSTE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+    <style>
+        /* Estilo para el contenedor del Quiz */
+        #quiz-container {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 70%;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none; /* Oculto inicialmente */
+        }
+
+        /* Botón para mostrar el Quiz */
+        #show-quiz-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #show-quiz-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <a-text value="Realidad Virtual - AFORE PENSIONISSSTE"
+               position="0 3 5"
+               scale="2 2 2"
+               color="black"
+               align="center">
+        </a-text>
+
+        <a-videosphere src="https://cdn.glitch.global/your-video.mp4"></a-videosphere>
+
+        <!-- Pared izquierda -->
+        <a-plane position="-10 2 0" rotation="0 90 0" width="10" height="5" color="#87CEFA" scale="1 1 2">
+            <a-image src="/imagenes/ahorro.jpg" position="-2.3 0 0.1" width="4" height="3"></a-image>
+            <a-image src="/imagenes/compromiso.jpg" position="2.6 0 0.1" width="4" height="3"></a-image>
+        </a-plane>
+
+        <!-- Pared derecha -->
+        <a-plane position="10 2 0" rotation="0 -90 0" width="10" height="5" color="#90EE90" scale="1 1 2">
+            <a-image src="/imagenes/remanente.jpg" position="-2.4 0 0.1" width="4" height="3"></a-image>
+            <a-image src="/imagenes/rendimientos.jpg" position="2.6 0 0.1" width="4" height="3"></a-image>
+        </a-plane>
+
+        <!-- Pared de fondo -->
+        <a-plane position="0 2 5" rotation="0 180 0" width="10" height="5" color="#FFA07A" scale="1 1 2">
+            <a-image src="/imagenes/sorteo.jpg" position="-2.5 0 0.1" width="4" height="3"></a-image>
+            <a-image src="/imagenes/ventajas.jpg" position="2 0 0.1" width="4" height="3"></a-image>
+        </a-plane>
+
+        <!-- Pared frontal -->
+        <a-plane position="0 2 -5" rotation="0 0 0" width="10" height="5" color="#FFA07A" scale="1 1 2">
+            <a-image src="/imagenes/afore2.jpg" position="0 0 0.1" width="9.5" height="4.7"></a-image>
+        </a-plane>
+    </a-scene>
+
+    <!-- Botón para mostrar el Quiz -->
+    <button id="show-quiz-btn">Mostrar Quiz</button>
+
+    <!-- Contenedor del Quiz -->
+    <div id="quiz-container">
+        <h2>Quiz sobre AFORE PENSIONISSSTE</h2>
+        <p>Responde las siguientes preguntas:</p>
+        <form id="quiz-form">
+            <!-- Pregunta 1 -->
+            <label>1. ¿Qué es una AFORE?</label><br>
+            <input type="radio" name="question1" value="a"> Una cuenta bancaria<br>
+            <input type="radio" name="question1" value="b"> Una administradora de fondos para el retiro<br>
+            <input type="radio" name="question1" value="c"> Un fondo de inversión para empresas<br><br>
+
+            <!-- Pregunta 2 -->
+            <label>2. ¿Cuál es el principal beneficio de una AFORE?</label><br>
+            <input type="radio" name="question2" value="a"> Rendimientos a largo plazo<br>
+            <input type="radio" name="question2" value="b"> Compra de bienes raíces<br>
+            <input type="radio" name="question2" value="c"> Créditos personales<br><br>
+
+            <!-- Pregunta 3 -->
+            <label>3. ¿Qué es el remanente de operación?</label><br>
+            <input type="radio" name="question3" value="a"> Un ahorro extra<br>
+            <input type="radio" name="question3" value="b"> Excedente de recursos después de gastos<br>
+            <input type="radio" name="question3" value="c"> Un ingreso adicional del gobierno<br><br>
+
+            <!-- Pregunta 4 -->
+            <label>4. ¿Quién supervisa a las AFORE?</label><br>
+            <input type="radio" name="question4" value="a"> Banco de México<br>
+            <input type="radio" name="question4" value="b"> CONSAR<br>
+            <input type="radio" name="question4" value="c"> Secretaría de Hacienda<br><br>
+
+            <!-- Pregunta 5 -->
+            <label>5. ¿Cuál es la principal función de una AFORE?</label><br>
+            <input type="radio" name="question5" value="a"> Administrar fondos de pensión<br>
+            <input type="radio" name="question5" value="b"> Administrar cuentas bancarias<br>
+            <input type="radio" name="question5" value="c"> Comprar acciones<br><br>
+
+            <!-- Pregunta 6 -->
+            <label>6. ¿Qué tipo de inversión hace una AFORE?</label><br>
+            <input type="radio" name="question6" value="a"> Inversiones de alto riesgo<br>
+            <input type="radio" name="question6" value="b"> Inversiones en bonos y acciones<br>
+            <input type="radio" name="question6" value="c"> Solo inversiones en bienes raíces<br><br>
+
+            <!-- Pregunta 7 -->
+            <label>7. ¿Qué es el saldo de la AFORE?</label><br>
+            <input type="radio" name="question7" value="a"> El total acumulado en la cuenta de pensión<br>
+            <input type="radio" name="question7" value="b"> Los ingresos netos de una empresa<br>
+            <input type="radio" name="question7" value="c"> La cantidad de dinero invertida en el mercado<br><br>
+
+            <!-- Pregunta 8 -->
+            <label>8. ¿Cuánto tiempo debe permanecer el dinero en la AFORE?</label><br>
+            <input type="radio" name="question8" value="a"> Hasta que se retire<br>
+            <input type="radio" name="question8" value="b"> Solo unos meses<br>
+            <input type="radio" name="question8" value="c"> Durante toda la vida<br><br>
+
+            <!-- Pregunta 9 -->
+            <label>9. ¿Qué hace la CONSAR?</label><br>
+            <input type="radio" name="question9" value="a"> Regula a las AFORE<br>
+            <input type="radio" name="question9" value="b"> Supervisa las inversiones<br>
+            <input type="radio" name="question9" value="c"> Administra los fondos de pensión<br><br>
+
+            <!-- Pregunta 10 -->
+            <label>10. ¿Cómo puede un trabajador cambiar de AFORE?</label><br>
+            <input type="radio" name="question10" value="a"> Llamando al servicio de atención al cliente<br>
+            <input type="radio" name="question10" value="b"> Presentando una solicitud en línea<br>
+            <input type="radio" name="question10" value="c"> Solo a través de su empleador<br><br>
+
+            <!-- Botón para enviar el Quiz -->
+            <button type="submit">Enviar Respuestas</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // Respuestas correctas
+        const correctAnswers = {
+            question1: "b",
+            question2: "a",
+            question3: "b",
+            question4: "b",
+            question5: "a",
+            question6: "b",
+            question7: "a",
+            question8: "a",
+            question9: "a",
+            question10: "b"
+        };
+
+        // Mostrar el contenedor del Quiz al hacer clic en el botón
+        document.getElementById('show-quiz-btn').addEventListener('click', function() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.style.display = quizContainer.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Manejo del envío del formulario
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let correctCount = 0;
+            let incorrectCount = 0;
+
+            // Verificar las respuestas
+            for (let question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[question]) {
+                        correctCount++;
+                    } else {
+                        incorrectCount++;
+                    }
+                }
+            }
+
+            // Mostrar el resultado
+            const result = document.getElementById("result");
+            result.innerHTML = `Respuestas correctas: ${correctCount}<br>Respuestas incorrectas: ${incorrectCount}`;
+            alert('¡Gracias por completar el Quiz!');
+        });
+    </script>
+</body>
+</html>
